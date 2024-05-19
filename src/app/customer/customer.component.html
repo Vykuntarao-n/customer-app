@@ -1,0 +1,24 @@
+<!-- src/app/customer/customer.component.html -->
+<div class="container">
+    <h2>Create Customer</h2>
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="firstName">First Name</label>
+        <input id="firstName" formControlName="firstName">
+      </div>
+      <div>
+        <label for="lastName">Last Name</label>
+        <input id="lastName" formControlName="lastName">
+      </div>
+      <div>
+        <label for="address">Address</label>
+        <input id="address" formControlName="address">
+      </div>
+      <button *ngIf="isUpdateMode; else submit" (click)="onSubmit()">Update</button>
+    </form>
+  </div>
+
+  <ng-template #submit>
+    <button type="submit" >Save</button>
+  </ng-template>
+  

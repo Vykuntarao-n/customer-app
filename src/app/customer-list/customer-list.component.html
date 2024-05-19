@@ -1,0 +1,30 @@
+<!-- src/app/customer-list/customer-list.component.html -->
+<div class="container">
+    <h2>Customer List</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Address</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>{{ customer.id }}</td>
+          <td>{{ customer.firstName }}</td>
+          <td>{{ customer.lastName }}</td>
+          <td>{{ customer.address }}</td>
+          <td>
+            <button (click)="navigateToUpdate(customer.id)">Update</button> 
+          </td>
+          <td>
+            <button (click)="deleteCustomer(customer.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
